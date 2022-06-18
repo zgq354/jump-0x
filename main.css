@@ -1,0 +1,69 @@
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.open-tips {
+  position: absolute;
+  font-size: 14px;
+  line-height: 24px;
+  top: 8px;
+  right: 8px;
+}
+
+.open-tips::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  right: 10px;
+  width: 36px;
+  height: 36px;
+  background: url(./assets/icon-right-up-arrow.png);
+  background-size: contain;
+}
+
+.open-tips .tips-text {
+  position: absolute;
+  top: 14px;
+  right: 10px;
+  width: 120px;
+}
+
+.link-bd {
+  padding-top: 40%;
+  text-align: center;
+}
+
+.link-bd h3 {
+  margin: 0;
+}
+
+.site-logo {
+  margin: 0 auto;
+  width: 100px;
+  height: 100px;
+  background: url(./assets/icon-logo-256x256.png);
+  background-size: contain;
+}
+
+.link-url {
+  font-size: 13px;
+  color: #666;
+}
+
+.extra-tips {
+  font-size: 13px;
+  color: #666;
+}
