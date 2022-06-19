@@ -31,6 +31,35 @@ function copyToClipboard(text) {
   }
 }
 
+function checkIsIOS() {
+  return [
+    'iPad Simulator',
+    'iPhone Simulator',
+    'iPod Simulator',
+    'iPad',
+    'iPhone',
+    'iPod'
+  ].includes(navigator.platform)
+  // iPad on iOS 13 detection
+  || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+}
+
+function checkIsAndroid() {
+  return /android/i.test(navigator.userAgent);
+}
+
+const isIOSQQ = (checkIsIOS() && / QQ/i.test(navigator.userAgent));
+const isAndroidQQ = (checkIsAndroid() && /MQQBrowser/i.test(navigator.userAgent) && /QQ/i.test((navigator.userAgent).split('MQQBrowser')));
+
+function isMobileQQ() {
+  return isIOSQQ || isAndroidQQ;
+}
+
+function isWeiXin(){ 
+  const ua = window.navigator.userAgent.toLowerCase(); 
+  return ua.match(/MicroMessenger/i) == 'micromessenger';
+}
+
 const Toast = {
   toastElem: null,
   isShow: false,
@@ -82,6 +111,13 @@ function main() {
     copyToClipboard(url);
     Toast.show('复制成功！');
   });
+  // 安卓、微信提示浏览器打开
+  document.querySelector('.open-tips').style.display = (isMobileQQ() || isWeiXin()) ? 'block' : 'none';
+  if (!isMobileQQ() && !isWeiXin()) {
+    setTimeout(() => {
+      location.href = url;
+    }, 1500);
+  }
 }
 
 // start
