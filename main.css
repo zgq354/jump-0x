@@ -23,7 +23,7 @@ html, body {
   font-size: 14px;
   line-height: 24px;
   top: 8px;
-  right: 8px;
+  right: 24px;
 }
 
 .open-tips::before {
@@ -255,7 +255,7 @@ a.Button.disabled,fieldset[disabled] a.Button {
 
 .s-toast-wrap {
   display: none;
-  position: fixed;
+  position: absolute;
   top: 80%;
   left: 0;
   right: 0;
