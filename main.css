@@ -13,6 +13,7 @@ html, body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  user-select: none;
 }
 
 .open-tips {
@@ -66,6 +67,7 @@ html, body {
   margin: 20px 0;
   font-size: 13px;
   color: #666;
+  user-select: all;
 }
 
 .extra-tips {
